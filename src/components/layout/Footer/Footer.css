@@ -1,0 +1,31 @@
+.footer {
+    background: var(--surface);
+    padding: 2rem 0;
+    margin-top: auto;
+    border-top: 1px solid var(--border);
+}
+
+.footer__container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    text-align: center;
+    color: var(--muted-text);
+}
+
+.footer__container p {
+    margin: 0;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+    .footer {
+        padding: 1.5rem 0;
+    }
+    
+    .footer__container {
+        padding: 0 1rem;
+    }
+}

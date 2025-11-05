@@ -1,0 +1,25 @@
+.empty-state {
+    text-align: center;
+    padding: 60px 20px;
+    color: var(--muted-text);
+}
+
+.empty-state__icon {
+    font-size: 64px;
+    margin-bottom: 20px;
+    opacity: 0.5;
+}
+
+.empty-state__title {
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 12px;
+    color: var(--text);
+}
+
+.empty-state__description {
+    font-size: 16px;
+    line-height: 1.5;
+    max-width: 400px;
+    margin: 0 auto;
+}

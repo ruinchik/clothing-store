@@ -1,0 +1,167 @@
+.sort {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 20px;
+    background: var(--surface);
+    border-radius: 12px;
+    border: 1px solid var(--border);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+
+.sort__label {
+    font-weight: 600;
+    color: var(--text);
+    font-size: 14px;
+    min-width: 100px;
+    white-space: nowrap;
+}
+
+.sort__controls {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex: 1;
+    justify-content: space-between;
+}
+
+.sort__options {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.sort__option {
+    background: var(--bg);
+    border: 2px solid var(--border);
+    color: var(--text);
+    padding: 10px 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    font-size: 14px;
+    font-weight: 500;
+    white-space: nowrap;
+    flex: 1;
+    min-width: 140px; /* Увеличили для "По популярности" */
+    text-align: center;
+}
+
+.sort__option:hover {
+    border-color: var(--primary);
+    background: rgba(255, 107, 53, 0.05);
+    transform: translateY(-1px);
+}
+
+.sort__option--active {
+    background: var(--primary);
+    color: white;
+    border-color: var(--primary);
+    box-shadow: 0 2px 8px rgba(255, 107, 53, 0.3);
+}
+
+/* ОБНОВЛЕННЫЙ БЛОК СТРЕЛОЧЕК */
+.sort__order {
+    display: flex;
+    border: 2px solid var(--border);
+    border-radius: 8px;
+    overflow: hidden;
+    background: var(--bg);
+    min-width: 80px; /* Уменьшили для стрелочек */
+}
+
+.sort__order-btn {
+    background: transparent;
+    border: none;
+    padding: 10px 12px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    font-size: 16px; /* Увеличили для стрелочек */
+    font-weight: 600;
+    color: var(--text);
+    flex: 1;
+    text-align: center;
+    min-width: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.sort__order-btn:hover {
+    background: var(--surface);
+}
+
+.sort__order-btn--active {
+    background: var(--primary);
+    color: white;
+}
+
+.sort__order-btn:first-child {
+    border-right: 1px solid var(--border); /* Утончили разделитель */
+}
+
+/* Адаптивность */
+@media (max-width: 1024px) {
+    .sort {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 12px;
+    }
+    
+    .sort__label {
+        min-width: auto;
+        text-align: center;
+    }
+    
+    .sort__controls {
+        flex-direction: column;
+        gap: 12px;
+    }
+    
+    .sort__options {
+        justify-content: center;
+    }
+    
+    .sort__option {
+        min-width: 120px;
+        flex: 0 1 auto;
+    }
+}
+
+@media (max-width: 768px) {
+    .sort {
+        padding: 16px;
+    }
+    
+    .sort__options {
+        flex-direction: column;
+        width: 100%;
+    }
+    
+    .sort__option {
+        min-width: auto;
+        width: 100%;
+    }
+    
+    .sort__order {
+        width: 100%;
+        min-width: auto;
+    }
+}
+
+@media (max-width: 480px) {
+    .sort {
+        padding: 12px;
+        gap: 8px;
+    }
+    
+    .sort__option {
+        padding: 8px 12px;
+        font-size: 13px;
+    }
+    
+    .sort__order-btn {
+        padding: 8px 10px;
+        font-size: 14px;
+    }
+}

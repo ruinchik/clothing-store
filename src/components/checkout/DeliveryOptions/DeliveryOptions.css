@@ -1,0 +1,115 @@
+.delivery-options {
+    background: var(--surface);
+    padding: 24px;
+    border-radius: 12px;
+    border: 1px solid var(--border);
+}
+
+.delivery-options__title {
+    margin: 0 0 24px 0;
+    font-size: 20px;
+    font-weight: 600;
+    color: var(--text);
+}
+
+.delivery-options__list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.delivery-option {
+    border: 2px solid var(--border);
+    border-radius: 12px;
+    padding: 20px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    background: var(--bg);
+    position: relative;
+    overflow: hidden;
+}
+
+.delivery-option::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 4px;
+    height: 100%;
+    background: var(--border);
+    transition: all 0.3s ease;
+}
+
+.delivery-option:hover {
+    border-color: var(--primary);
+    background: var(--surface);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.delivery-option:hover::before {
+    background: var(--primary);
+}
+
+.delivery-option--selected {
+    border-color: var(--primary);
+    background: rgba(255, 107, 53, 0.05);
+}
+
+.delivery-option--selected::before {
+    background: var(--primary);
+}
+
+.delivery-option__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 12px;
+}
+
+.delivery-option__radio {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.delivery-option__radio-input {
+    margin: 0;
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    accent-color: var(--primary);
+}
+
+.delivery-option__name {
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--text);
+    cursor: pointer;
+    margin: 0;
+}
+
+.delivery-option__price {
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--success);
+}
+
+.delivery-option__description {
+    color: var(--muted-text);
+    margin-bottom: 8px;
+    line-height: 1.5;
+    font-size: 14px;
+}
+
+.delivery-option__details {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.delivery-option__eta {
+    font-size: 14px;
+    color: var(--muted-text);
+    font-style: italic;
+}

@@ -1,0 +1,213 @@
+.cart-page {
+    background: var(--surface);
+    border-radius: 16px;
+    width: 95vw;
+    max-width: 1200px;
+    max-height: 90vh;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid var(--border);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+.cart-page__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 24px 32px;
+    border-bottom: 1px solid var(--border);
+    background: var(--primary);
+    color: white;
+}
+
+.cart-page__header h2 {
+    margin: 0;
+    font-size: 24px;
+    font-weight: 700;
+}
+
+.cart-page__close {
+    background: rgba(255, 255, 255, 0.2);
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+    padding: 8px;
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    border-radius: 8px;
+    transition: all 0.2s ease;
+}
+
+.cart-page__close:hover {
+    background: rgba(255, 255, 255, 0.3);
+    transform: scale(1.1);
+}
+
+.cart-page__content {
+    display: grid;
+    grid-template-columns: 1fr 380px;
+    flex: 1;
+    overflow: hidden;
+}
+
+.cart-page__items {
+    padding: 24px;
+    overflow-y: auto;
+    background: var(--bg);
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.cart-page__sidebar {
+    display: flex;
+    flex-direction: column;
+    background: var(--surface);
+    border-left: 1px solid var(--border);
+}
+
+.cart-page__summary {
+    padding: 24px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.summary-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid var(--border);
+    color: var(--text);
+    font-size: 15px;
+}
+
+.summary-row:last-of-type {
+    border-bottom: none;
+}
+
+.summary-row.total {
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--primary);
+    margin-top: 8px;
+    padding-top: 12px;
+    border-top: 2px solid var(--primary);
+}
+
+.cart-page__checkout-btn {
+    width: 100%;
+    padding: 16px 24px;
+    background: var(--primary);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    margin-top: 20px;
+}
+
+.cart-page__checkout-btn:hover {
+    background: #e55a2b;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(255, 107, 53, 0.3);
+}
+
+.cart-page__empty {
+    padding: 60px 24px;
+    text-align: center;
+    color: var(--muted-text);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+}
+
+.cart-page__empty-icon {
+    font-size: 48px;
+    opacity: 0.5;
+}
+
+.cart-page__empty p {
+    font-size: 18px;
+    margin: 0;
+    font-weight: 500;
+}
+
+.cart-page__empty-btn {
+    padding: 12px 24px;
+    background: var(--primary);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.cart-page__empty-btn:hover {
+    background: #e55a2b;
+}
+
+/* Адаптивность */
+@media (max-width: 968px) {
+    .cart-page__content {
+        grid-template-columns: 1fr;
+    }
+    
+    .cart-page__sidebar {
+        border-left: none;
+        border-top: 1px solid var(--border);
+    }
+    
+    .cart-page {
+        width: 98vw;
+        max-height: 95vh;
+    }
+}
+
+@media (max-width: 768px) {
+    .cart-page__header {
+        padding: 20px 24px;
+    }
+    
+    .cart-page__header h2 {
+        font-size: 20px;
+    }
+    
+    .cart-page__items,
+    .cart-page__summary {
+        padding: 20px;
+    }
+    
+    .cart-page__empty {
+        padding: 40px 20px;
+    }
+}
+
+/* Кастомный скроллбар */
+.cart-page__items::-webkit-scrollbar {
+    width: 6px;
+}
+
+.cart-page__items::-webkit-scrollbar-track {
+    background: var(--surface);
+}
+
+.cart-page__items::-webkit-scrollbar-thumb {
+    background: var(--primary);
+    border-radius: 3px;
+}
+
+.cart-page__items::-webkit-scrollbar-thumb:hover {
+    background: #e55a2b;
+}
